@@ -1,0 +1,29 @@
+html(lang='en')
+    head  
+        meta(charset='UTF-8')
+        title To-Do
+        link(rel='stylesheet' type='text/css' href='/css/main.css')
+        script(src='/js/logout.js') 
+        block scripts
+    body 
+        div#navbar 
+            h3 
+                a(href='/home') 
+                    span.title #{userName}'s TODO List
+            
+            h3
+                span.title
+                    a(href='/createTask') Create Task
+            h3
+                if loggedIn
+                    form
+                        button(type='submit', id='logoutBttn') Logout
+                else
+                    span.loginBttn
+                        a(href='/login') Login
+
+            
+
+        div#content 
+            div#rightContent 
+                block rightContent

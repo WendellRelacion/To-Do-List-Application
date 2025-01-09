@@ -1,0 +1,29 @@
+## **Installation**  
+- Since I will not turn everything in (node_modules will be kept out), please
+    first install bcrypt, cookie-parser, express, mysql-await, and pug
+
+---
+
+## **Usage**  
+- first thing to use my project is to login/register. if you want to use an already 
+    populated example, fill in username with 55555 and password with 55555 in 
+    the login screen. The populated information is not great, but if you want to, you may use it.
+- Otherwise, you may register and create your own login, keep in mind you will
+    have to create new tasks for yourself. Also I did not make the password 
+    too difficult for ease of use. For example, you may use the password "1"
+    if you wanted to.
+
+---
+
+## **Features**  
+- Key features that I implemented are: 
+    1. fully functional user support where their data is stored separate from other users (a user cannot change     another user's information).
+    2. There will be categories that the user can use to get what they want. These categories should be High, Medium, Low, and overdue. 
+    3. there will be 2 sorting features, one being the ability for the user to look at done tasts and not done tasks, as stated in the writeup, another is for the datetime sorting to show the task furthest away, or one that is earliest starting with the overdues.
+    4. I also created a way for the user to be able to change description, but they must do this through the singular page for each task (if in the home page, click on the title for it as it will redirect you to the main task page).
+    5. Not really a feature but I did not implement rate limiting, so have fun clicking on every button!
+---
+
+## **Problems**  
+- If for some reason my project does not work for you, please let me know, I can create a video of how it works so that you can at least see what I was working with. (I've tested on three different computers, so it should be working)
+---

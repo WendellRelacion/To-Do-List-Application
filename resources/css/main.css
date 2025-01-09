@@ -1,0 +1,551 @@
+/* very cool gradient thing that I found */
+/* COLOR SCHEME #27233A, #B2AA8E, #40798C, #BC9EC1 */
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background: linear-gradient(0deg, #B2AA8E, #BC9EC1);
+    background-size: cover;
+    font-family: Arial, sans-serif; 
+}
+
+#navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #40798C;
+    padding: 15 40px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#logoutBttn {
+    font-size: 1.5em;
+    padding: 10px 20px;
+    background-color: #BC9EC1;
+    color: #2C3E50;
+    border: 2px solid #40798C;
+    border-radius: 5px;
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#logoutBttn:hover {
+    background-color: #40798C;
+    color: white;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.loginBttn {
+    font-size: 1.5em;
+    padding: 10px 20px;
+    background-color: #BC9EC1;
+    color: #2C3E50;
+    border: 2px solid #40798C;
+    border-radius: 5px;
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.loginBttn:hover {
+    background-color: #40798C;
+    color: white;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+
+
+#content {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    min-height: 100vh;
+}
+
+#leftContent {
+    flex: 1;
+    max-width: 200px;
+}
+
+#rightContent {
+    flex: 3;
+    background-color: #B2AA8E;
+}
+
+
+
+.rightContentTopSection {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 10px; 
+    background-color: #40798C;
+}
+
+.rightContentBottomSection {
+    display: flex;
+    justify-content: flex-start;
+    align-items: left; 
+
+    padding: 20px;
+    flex-wrap: wrap;
+
+    gap: 20px;
+
+    flex: 1;
+    min-height: 100%;
+    background-color: #B2AA8E;
+    
+}
+
+.card, .nCard {
+    border: 1px solid #cccccc; 
+    border-radius: 8px;
+    background-color: #B2AA8E; 
+    padding: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    max-width: 300px;
+    min-width: 250px; 
+    height: 315px; 
+    padding: 16px;
+}
+
+.topCard {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px; 
+    width: 100%;
+}
+
+.bottomCard {
+    border: 1px solid #cccccc; 
+    border-radius: 8px;
+    background-color: #ffffff; 
+    padding: 2px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    height: 170px; 
+}
+
+.tbc {
+max-width: 300px;
+max-height: 200px;
+}
+
+.textContent {
+    flex: 1; 
+}
+
+.check {
+    margin-left: 16px;
+}
+
+.check button {
+    padding: 8px 12px;
+    background-color: #40798C; 
+    color: white;
+    border: none;
+    border-radius: 4px;
+}
+
+.check button:hover {
+    background-color: #BC9EC1;
+}
+
+.bottomCard p {
+    margin: 4px 0; 
+}
+
+
+.error {
+    border: 2px solid red;
+    background-color: #f8d7da;
+}
+
+/* task pug file */
+
+#task {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; 
+    align-items: center;
+    background-color: #B2AA8E;
+}
+  
+#taskInfo {
+    display: flex;
+    flex: 7;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: flex-start;
+    margin-left: 10%;
+    font-size: 1.2em;
+}
+
+#loginForm {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; 
+    align-items: center;
+    background-color: #B2AA8E;
+}
+.loginForm {
+    display: flex;
+    flex: 7;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: flex-start;
+    margin-left: 10%;
+}
+
+#doneBttn {
+    flex: 3;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+  }
+  
+#deleteTaskBttn {
+    align-self: flex-end;
+}
+
+.sameSize {
+    width: 200px;
+    height: 40px;
+}
+
+
+#navbar h3 {
+    font-size: 2em;
+    color: #020202;
+    margin: 10px 0;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.title {
+    font-weight: bold;
+    color: #2C3E50;
+    text-decoration: none;
+    transition: color 0.3s, box-shadow 0.3s;
+    border: 2px solid #40798C;
+    padding: 10px;
+    border-radius: 5px;
+    font-family: 'Helvetica Neue', sans-serif;
+    text-align: center;
+    background-color: #BC9EC1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 1.5em;
+}
+
+.title:hover {
+    background-color: #40798C;
+    color: #f8f9fa;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+span.title {
+    font-weight: bold;
+    color: #2C3E50;
+    text-decoration: none;
+    transition: color 0.3s, box-shadow 0.3s;
+    border: 2px solid #40798C;
+    padding: 10px;
+    border-radius: 5px;
+    font-family: 'Helvetica Neue', sans-serif;
+    text-align: center;
+    background-color: #BC9EC1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 1.5em;
+}
+span.title:hover {
+    background-color: #40798C;
+    color: #f8f9fa;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+a {
+    text-decoration: none;
+}
+
+.bubble {
+    display: flex;
+    justify-content: flex-start;
+    align-items: left;
+    padding: 20px;
+    flex-wrap: wrap;
+    gap: 20px;
+    flex: 1;
+    min-height: 100%;
+    background: linear-gradient(to bottom, #27233A, #B2AA8E, #40798C, #BC9EC1);
+}
+
+.cBubble {
+    display: flex;
+    justify-content: flex-start;
+    align-items: left;
+    padding: 20px;
+    flex-wrap: wrap;
+    gap: 20px;
+    flex: 1;
+    /* min-height: 100%; */
+    /* background: linear-gradient(to bottom, #27233A, #40798C, #BC9EC1); */
+}
+
+.taskBubble {
+    display: flex;
+    justify-content: flex-start;
+    align-items: left;
+    padding: 20px;
+    flex-wrap: wrap;
+    gap: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    min-height: 100%;
+    background-color: #B2AA8E;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    /* width: 100px; */
+}
+
+.taskBubble input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ffffff;
+    border-radius: 4px;
+    box-sizing: border-box;
+    max-width: 100%;
+    resize: none;
+    height: 75px;
+}
+
+.taskBubble button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    width: 100%;
+    margin-top: 50px;
+}
+
+#deleteButton {
+    background-color: #a73f28;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    width: 100%;
+    margin-top: 50px;
+    transition: background-color 0.3s;
+}
+
+#deleteButton:hover {
+    background-color: #c92500;
+}
+
+#doneButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #40798C;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    margin-top: 0;
+    transition: background-color 0.3s;
+}
+
+#doneButton:hover {
+    background-color: #3A6B8E;
+}
+
+.createFormBubble {
+    background-color: #B2AA8E;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 15px;
+    margin: auto;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 500px;
+    height: 500px;
+    display: block;
+}
+.createFormBubble.reg,
+.createFormBubble.log {
+    width: 500px;
+    height: 350;
+}
+.createFormBubble h2 {
+    text-align: center;
+    color: #40798C;
+    
+}
+
+.createFormBubble div {
+    margin-bottom: 15px;
+}
+
+.createFormBubble label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.createFormBubble input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ffffff;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.createFormBubble input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    border: 1px solid #ffffff;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.createFormBubble select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ffffff;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.createFormBubble textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ffffff;
+    border-radius: 4px;
+    box-sizing: border-box;
+    max-width: 100%;
+    resize: none;
+    height: 75px;
+}
+
+.createFormBubble button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.createFormBubble button:hover {
+    background-color: #218838;
+}
+
+.sortsAndFilters {
+    display: flex;
+}
+
+.filters, .sortingAndFiltering {
+    background-color: #27233A;
+    padding: 10px;
+    flex: 1;
+}
+.bubbleSort {
+    padding: 20px;
+    flex-wrap: wrap;
+    gap: 20px;
+    flex: 1;
+    background: linear-gradient(to bottom,  #B2AA8E, #40798C, #BC9EC1);
+}
+
+.bubbleSort:hover {
+    background: #40798C;
+}
+
+#filterAllButton,
+#filterDoneButton,
+#filterNotDoneButton {
+    font-size: 1.5em;
+    padding: 12px 24px;
+    min-width: 150px;
+    background-color: #BC9EC1;
+    transition: background-color 0.3s;
+    margin: 10px;
+}
+
+#filterAllButton:hover,
+#filterDoneButton:hover,
+#filterNotDoneButton:hover {
+    background-color: #A9B4C2;
+}
+
+#filterForm {
+    width: 500px;
+}
+
+.sortingAndFiltering {
+    width: 100%;
+    display: flex;
+    /* flex-direction: row; */
+}
+.SFContainer{
+    display: flex;
+    justify-content: space-between;
+}
+
+.sorting {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.categoryFilter {
+    display: flex;
+    align-items: center;
+}
+
+
+.BContainer {
+    margin: 5px auto;
+    width: fit-content;
+    transition: background-color 0.3s;
+    
+}
+
+#applyFilter{
+    /* font-size: 1.5em; */
+    padding: 12px 16px;
+    min-width: 150px;
+    background-color: #BC9EC1;
+}
+
+#applyFilter:hover{
+    /* font-size: 1.5em; */
+    padding: 12px 16px;
+    min-width: 150px;
+    background-color: #40798C;
+}
+
+.sorting,
+.categoryFilter {
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(151, 3, 3, 0.2);
+}
+
+
+a {
+    color: #2C3E50;
+}
+
+
+
+.red {
+    background-color: red;
+}
+.yellow {
+    background-color: yellow;
+}
+.green {
+    background-color: green;
+}

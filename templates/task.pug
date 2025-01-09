@@ -1,0 +1,35 @@
+extends layout.pug 
+
+block scripts
+    script(src='/js/task.js') 
+
+
+block rightContent
+
+    div#task.bubble
+        div.taskBubble
+            div
+                div#taskInfo
+                    input(type="hidden", id="taskId", value=tasksInfo[0].id)
+                    h3 #{tasksInfo[0].task_name}
+                    p.category Category: #{tasksInfo[0].category}
+                    if tasksInfo[0].doneness
+                        p#doneness Done: Yes
+                    else
+                        p#doneness Done: No
+                    p.deadline Deadline: #{tasksInfo[0].deadline.toLocaleString()}
+                    p.description Description: #{tasksInfo[0].description}
+                    input(type='hidden', id='taskId', value=tasksInfo[0].id)
+                    div
+                        input#newDescription(type="text" placeholder="New description")
+                        button#updateDescriptionBttn(type="button") Update Description
+            div
+                div#doneBttn
+                    if tasksInfo[0].doneness
+                        button#markDoneBttn(type='button') Check if NotDone
+                    else
+                        button#markDoneBttn(type='button') Check if Done
+
+                div#deleteTask
+                    button#deleteButton(type='button' ) Delete Task
+

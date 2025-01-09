@@ -1,0 +1,51 @@
+html(lang='en')
+    head  
+        meta(charset='UTF-8')
+        title To-Do
+        link(rel='stylesheet' type='text/css' href='/css/main.css')
+        script(src='/js/login.js')
+        script(src='/js/logout.js') 
+    body 
+        div#navbar 
+            h3 
+                a(href='/home') 
+                    span.title #{userName}'s TODO List
+            
+            h3
+                span.title
+                    a(href='/createTask') Create Task
+            h3
+                if loggedIn
+                    form
+                        button(type='submit', id='logoutBttn') Logout
+                else
+                    span.loginBttn
+                        a(href='/login') Login
+
+
+        //- somehow the browser does not like it if without the autocomplete stuff so google told me what to put down
+        if !loggedIn
+            div#loginForm.bubble
+                form.createFormBubble.log
+                    h2 Login
+
+                    div
+                        label(for="username") Username:
+                        input(type="text" id="username" name="username" placeholder="Enter your username" required autocomplete = "username")
+
+                    div
+                        label(for="password") Password:
+                        input(type="password" id="password" name="password" placeholder="Enter your password" required autocomplete="current-password")
+
+                    div
+                        button#loginBttn(type="submit") Login
+
+                    div
+                        a(href="/register") Don't have an account? Register here.
+        else 
+             div#alreadyLoggedIn
+                p You are already logged in. Redirecting to your home page...
+                script.
+                    setTimeout(function() {
+                        window.location.href = '/home';
+                    }, 3000);

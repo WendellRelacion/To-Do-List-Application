@@ -1,0 +1,52 @@
+html(lang='en')
+    head  
+        meta(charset='UTF-8')
+        title To-Do
+        link(rel='stylesheet' type='text/css' href='/css/main.css')
+        script(src='/js/register.js')
+        script(src='/js/logout.js') 
+    body
+        div#navbar 
+            h3 
+                a(href='/home') 
+                    span.title #{userName}'s TODO List
+            
+            h3
+                span.title
+                    a(href='/createTask') Create Task
+            h3
+                if loggedIn
+                    form
+                        button(type='submit', id='logoutBttn') Logout
+                else
+                    span.loginBttn
+                        a(href='/login') Login
+
+        if !loggedIn
+            div#registerForm.bubble
+                form.createFormBubble.reg
+                    h2 Register
+
+                    div
+                        label(for="username") Username:
+                        input(type="text" id="username" name="username" placeholder="Choose a username" required autocomplete = "username")
+
+                    div
+                        label(for="password") Password:
+                        input(type="password" id="password" name="password" placeholder="Create a password" required autocomplete="current-password")
+
+                    div
+                        label(for="confirmPassword") Confirm Password:
+                        input(type="password" id="confirmPassword" name="confirmPassword" placeholder="Re-enter your password" required autocomplete="current-password")
+
+                    div
+                        button#regBttn(type="submit") Register
+        else    
+            //- just in case someone tries to brute force this
+            div#loggedInMessage
+                h2 You are already logged in.
+                p Please logout before registering a new account.
+                script.
+                    setTimeout(function() {
+                        window.location.href = '/home';
+                    }, 5000);

@@ -1,0 +1,67 @@
+extends layout.pug 
+block scripts
+    script(src="/js/home.js")
+
+
+block rightContent
+
+    div.sortsAndFilters
+        div.filters
+            button#filterAllButton.bubbleSort Show Both
+            button#filterDoneButton.bubbleSort Filter Done Tasks
+            button#filterNotDoneButton.bubbleSort Filter Not Done Tasks
+            input(type="hidden", id="currentFilter", value="All")
+
+        div.sortingAndFiltering
+            form#filterForm(action='/home', method='GET')
+                div.SFContainer
+                    div.sorting.bubbleSort
+                        select#deadlineSort.sameSize(name='deadlineSort')
+                            option(value='ASC') Sort by Deadline Ascending
+                            option(value='DESC') Sort by Deadline Descending
+
+                    div.categoryFilter.bubbleSort
+                        select#category.sameSize(name='category')
+                            option(value='') All Categories
+                            option(value='high') High
+                            option(value='medium') Medium
+                            option(value='low') Low
+                            option(value='overdue') Overdue
+                
+                div.BContainer
+                    button.sameSize#applyFilter(type='submit') Apply Filters
+
+
+    div.rightContentBottomSection.bubble
+        each task in tasks
+            div.card.cBubble
+                input(type="hidden", id="taskId", value=task.id)
+                div.topCard(id = `task-${task.id}`)
+                    div.ltc
+                        a(href=`/task/${task.id}`) 
+                            h3= task.task_name
+                        p(class=(
+                            task.category === 'high' || task.category === 'overdue' ? 'red' :
+                            task.category === 'medium' ? 'yellow' :
+                            'green'
+                        )) Category: #{task.category}
+                    div.check
+                    if task.doneness 
+                        button#doneButton Check if NotDone
+                        input(type="hidden", id="taskDoneness", value='true')
+                    else    
+                        button#doneButton Check if Done
+                        input(type="hidden", id="taskDoneness", value='false')
+                div.bottomCard
+                    div.tbc
+                        p Deadline: #{task.deadline}
+                        br
+                        p Description: #{task.description}
+                    div.deleteCard
+                        button#deleteButton Delete
+
+        a(href='/createTask', style='text-decoration: none; color: inherit;')
+            div.nCard#newCard.cBubble
+                div.topCard
+                    div.mtc
+                        h3 Create New Task

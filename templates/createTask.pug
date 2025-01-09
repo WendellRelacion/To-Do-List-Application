@@ -1,0 +1,37 @@
+extends layout.pug 
+
+block scripts
+    script(src='/js/createTask.js') 
+    
+
+block rightContent
+    if loggedIn
+        div.bubble
+            form.createFormBubble
+                h2 Add New Task
+                div
+                    label(for="task_name") Task Name:
+                    input(type="text" id="task_name" name="task_name" required)
+                div
+                    label(for="nCategory") Category:
+                    select(id="nCategory" name="category" required)
+                        option(value="") Select a category
+                        option(value="high") High
+                        option(value="medium") Medium
+                        option(value="low") Low
+                div
+                    label(for="doneness") Done:
+                    input(type="checkbox" id="doneness" name="doneness")
+                div
+                    label(for="deadline") Deadline:
+                    input(type="datetime-local" id="deadline" name="deadline" required)
+                div
+                    label(for="description") Description:
+                    textarea(id="description" name="description")
+                div
+                    button#createBttn(type="submit") Add Task
+    else
+        h2 Please log in to create a new task.
+        p
+            a(href="/login") Click here to log in
+
